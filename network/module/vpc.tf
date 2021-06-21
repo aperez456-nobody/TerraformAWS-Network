@@ -151,7 +151,7 @@ module "vpc" {
   tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = local.shared
     "CreatedBy"                                   = local.CreatedBy
-    "MangedBy"                                    = local.ManagedBy
+    "ManagedBy"                                   = local.ManagedBy
     "Environment"                                 = var.environment
   }
 
@@ -159,7 +159,7 @@ module "vpc" {
     "kubernetes.io/cluster/${local.cluster_name}" = local.shared
     "kubernetes.io/role/elb"                      = local.ELB
     "CreatedBy"                                   = local.CreatedBy
-    "MangedBy"                                    = local.ManagedBy
+    "ManagedBy"                                   = local.ManagedBy
     "Environment"                                 = var.environment
     "Tier"                                        = local.Public
   }
@@ -168,7 +168,7 @@ module "vpc" {
     "kubernetes.io/cluster/${local.cluster_name}" = local.shared
     "kubernetes.io/role/internal-elb"             = local.ELB
     "CreatedBy"                                   = local.CreatedBy
-    "MangedBy"                                    = local.ManagedBy
+    "ManagedBy"                                   = local.ManagedBy
     "Environment"                                 = var.environment
     "Tier"                                        = local.Private
   }

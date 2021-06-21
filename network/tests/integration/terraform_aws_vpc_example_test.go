@@ -1,4 +1,4 @@
-package tests
+package integration
 
 import (
 	"github.com/gruntwork-io/terratest/modules/aws"
@@ -16,7 +16,7 @@ func TestTerraformAwsVpcExample(t *testing.T)  {
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../example",
+		TerraformDir: "../../example",
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
@@ -44,5 +44,6 @@ func TestTerraformAwsVpcExample(t *testing.T)  {
 	for _, privateSubnetId := range privateSubnetIds {
 		assert.False(t, aws.IsPublicSubnet(t, privateSubnetId, awsRegion))
 	}
+
 
 }
